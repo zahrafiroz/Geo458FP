@@ -2,7 +2,7 @@
 # Group AA3 
 ## Zahra, Sergio, Hannah, Jacob, Joey
 
-# Final Project; *A study of Washington states Rainfall visualized using a Smart Dashboard*_
+# Final Project; *A study of Washington states Rainfall visualized using a Smart Dashboard*
 
 ## Clearly describe the project idea:
 
