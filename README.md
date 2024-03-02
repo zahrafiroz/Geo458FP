@@ -2,8 +2,7 @@
 # Group AA3 
 ## Zahra, Sergio, Hannah, Jacob, Joey
 
-## Final Project Proposal; 
-Each group is expected to develop a digital-geographies related project: _*A study of Washington states Rainfall visualized using a Smart Dashboard*_
+# Final Project; *A study of Washington states Rainfall visualized using a Smart Dashboard*_
 
 ## Clearly describe the project idea:
 
