@@ -29,4 +29,4 @@ The required multimedia for this project are mainly images, graphs, and visual m
 
 
 ## Link to current project (Ongoing work)
-https://raw.githack.com/zhrafiroz/GEO458FP/main/index.html
+https://raw.githack.com/zahrafiroz/Geo458FP/main/index.html
