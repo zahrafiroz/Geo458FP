@@ -26,7 +26,8 @@ The required multimedia for this project are mainly images, graphs, and visual m
 
 ## Our original FIGMA brainstorm:
 <img width="757" alt="Screenshot 2024-03-01 at 8 06 35 PM" src="https://github.com/zahrafiroz/Geo458FP/assets/114683477/4a82f849-7454-4f75-9790-d2457c82000e">
-
+## Our first layer visualizing individual years and the corresponding rainfall:
+![Screenshot_2024-03-03_at_9 10 22_PM](https://github.com/zahrafiroz/Geo458FP/assets/114683477/704c4532-b12a-4b5f-98ad-61156291e9a6)
 
 ## Link to current project (Ongoing work)
 https://raw.githack.com/zahrafiroz/Geo458FP/main/index.html
