@@ -26,3 +26,7 @@ The required multimedia for this project are mainly images, graphs, and visual m
 
 ## Our original FIGMA brainstorm:
 <img width="757" alt="Screenshot 2024-03-01 at 8 06 35 PM" src="https://github.com/zahrafiroz/Geo458FP/assets/114683477/4a82f849-7454-4f75-9790-d2457c82000e">
+
+
+## Link to current project (Ongoing work)
+https://raw.githack.com/sergiov11/GEO458FP/main/index.html
