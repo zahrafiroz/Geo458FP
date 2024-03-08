@@ -25,8 +25,12 @@ Environmental researchers stand to benefit significantly from the project, as it
 The required multimedia for this project are mainly images, graphs, and visual maps. The goal of this project is to create an interactive and visually appealing way for viewers to understand the rainfall patterns from the gathered information and datasets. We will use our skills and knowledge of QGIS to make maps of Seattle’s rainfall patterns which will then be turned into an image. Graphs also may provide a visual representation of the rainfall patterns better for certain circumstances, but this multimedia will be used in a way that can contribute to our own understanding of the data so we can properly display the results onto a thematic map - the majority of our multimedia is what we will be adapting [visualize our data and statistics] such as line/bar graphs. 
 
 ## Our original FIGMA brainstorm:
+
 <img width="757" alt="Screenshot 2024-03-01 at 8 06 35 PM" src="https://github.com/zahrafiroz/Geo458FP/assets/114683477/4a82f849-7454-4f75-9790-d2457c82000e">
 
+## Our first layer visualizing individual years and the corresponding rainfall:
+
+![Screenshot_2024-03-03_at_9 10 22_PM](https://github.com/zahrafiroz/Geo458FP/assets/114683477/704c4532-b12a-4b5f-98ad-61156291e9a6)
 
 ## Link to project
 https://raw.githack.com/zahrafiroz/Geo458FP/main/index.html
