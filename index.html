@@ -1,217 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    <title>U.S. COVID-19 2020 Case</title>
+    <title>Seattle Precipitation and Flood Risk</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- include google web fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web|Oswald" rel="stylesheet">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="js/chart.js"></script>
+    <!-- include icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
-    <link rel="stylesheet" href="css/chartpie.css" />
+    <!-- Load d3.js and c3.js -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="css/chart_pie.css">
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- Load Google Charts -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        #map {
-            position: absolute;
-            top: 0;
-            bottom: 50%;
-            width: 50%;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        #map {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-        }
-
-        #legend {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 110px;
-            background: #A9A9A9;
-            margin-right: 20px;
-            margin-bottom: 40px;
-            padding: 10px 20px 10px 10px;
-            border-radius: 3px;
-            text-align: center;
-            font-family: 'Open Sans', sans-serif;
-            z-index: 5;
-
-        }
-
-        .break {
-            position: relative;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        .dot {
-            display: inline-block;
-            margin-top: 5px;
-            border-radius: 50%;
-            opacity: 0.6;
-        }
-
-        .dot-label {
-            position: absolute;
-            top: 0;
-            right: 0;
-            font-style: italic;
-        }
-
-        a {
-            color: black
-        }
-
-        #title {
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin-top: 20px;
-        margin-left: 20px;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 25pt;
-        color: white
-        }
-
-        #subtitle {
-            position: absolute;
-            top: 0;
-            left: 0;
-            margin-top: 70px;
-            margin-left: 190px;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 15pt;
-            color: white
-        }
-
-    </style>
 </head>
 
 <body>
+    <div id="aboutTab">
+        <button id="aboutButton">About</button>
+    </div>
+
+    <div id="aboutContent">
+        <h2>About</h2>
+        <p>This data will show the past five years and the total amount of rain in the city. We will be visualizing this research through a smart dashboard that offers as much information to the viewers as possible without being too overwhelming and distracting. It will work to offer information quickly and efficiently while also showing how useful this information can be because of the way the data is used and visualized. This project will cover different elements of the rainfall and GIS experience which can be toggled with and maneuvered through the smart dashboard to give the most information at each level the user is seeking. It will cover a great deal of statistics and related information and topics to Seattle and its famous rainy weather much like the image examples below. This project will integrate differing levels of map-making and geographical visualizations learned and adapted from the beginning weeks of class and more specifically the final weeks depending on the prompts.</p>
+    </div>
+
+    <!-- sidebar -->
+    <div id="info">
+        <div id="title">
+            <span id="reset"><a href="#">reset</a></span>
+        </div>
+        <div id="count" class="card">
+            <h5 id="desc"> Please choose a layer </h5>
+        </div>
+        <div id="legend-container"></div>
+        <div id="chart_div"></div>
+    </div>
+
+    <div id="mainTitle"> Seattle Precipitation and Flood Data </div>
     <div id="map"></div>
-    <div id="chart_div"></div>
-    <div id="legend"></div>
-    <div id="title"> Seattle Precipitation & Flooding Risk </div>
-    <div id="subtitle"> 2015 - 2020 </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/chart_pie.js"></script>
 
     <script>
-        mapboxgl.accessToken =
-            'pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw';
-        let map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/dark-v10',
-            zoom: 10.5, // starting zoom
-            center: [-122.2559435, 47.6002614] 
-        });
+        // JavaScript code to handle interaction with the "About" tab
+        const aboutButton = document.getElementById("aboutButton");
+        const aboutContent = document.getElementById("aboutContent");
 
-        const grades = [10000, 20000, 30000],
-            colors = ['rgb(254,224,210)', 'rgb(252,146,114)', 'rgb(222,45,38)'],
-            radii = [5, 15, 20];
-
-        map.on('load', () => {
-            map.addSource('covidCounts', {
-                type: 'geojson',
-                data: 'assets/us-covid-2020-counts.json'
-            });
-
-            // Add event listener to show popup on click
-            map.on('click', 'covidCounts-point', (event) => {
-                new mapboxgl.Popup()
-                .setLngLat(event.features[0].geometry.coordinates)
-                .setHTML(`<strong>Cases:</strong> ${event.features[0].properties.cases}`)
-                .addTo(map);
-            });
-
-            // Create legend
-            const legend = document.getElementById('legend');
-            var labels = ['<strong>Size</strong>'], vbreak;
-            for (var i = 0; i < grades.length; i++) {
-                vbreak = grades[i];
-                dot_radius = 2 * radii[i];
-                labels.push(
-                '<p class="break"><i class="dot" style="background:' + colors[i] + '; width: ' + dot_radius +
-                'px; height: ' +
-                dot_radius + 'px; "></i> <span class="dot-label" style="top: ' + dot_radius / 2 + 'px;">' + vbreak +
-                '</span></p>');
-
-            }
-            legend.innerHTML = labels.join('');
-
-            // Add layer to map
-            map.addLayer({
-                'id': 'covidCounts-point',
-                'type': 'circle',
-                'source': 'covidCounts',
-                'paint': {
-                    'circle-radius': {
-                        'property': 'cases',
-                        'stops': [
-                            [grades[0], radii[0]],
-                            [grades[1], radii[1]],
-                            [grades[2], radii[2]]
-                        ]
-                    },
-                    'circle-color': {
-                        'property': 'cases',
-                        'stops': [
-                            [grades[0], colors[0]],
-                            [grades[1], colors[1]],
-                            [grades[2], colors[2]]
-                        ]
-                    },
-                    'circle-stroke-color': 'white',
-                    'circle-stroke-width': 1,
-                    'circle-opacity': 0.28
-                }
-            });
-
-            // Load Google Charts and draw the pie chart
-            google.charts.load('current', { 'packages': ['corechart'] });
-            google.charts.setOnLoadCallback(drawChart);
-
-            function drawChart() {
-                var data = google.visualization.arrayToDataTable([
-                    ['Year', 'Total Precipitation (inches)'],
-                    ['2015', 44.38],
-                    ['2016', 45.18],
-                    ['2017', 47.87],
-                    ['2018', 35.73],
-                    ['2019', 33.88],
-                    ['2020', 41.32]
-                ]);
-
-                var options = {
-                    title: 'Seattle Annual Precipitation (2015 - 2020)',
-                    backgroundColor: '#f8f8f8',
-                    is3D: true,
-                    titleTextStyle: {
-                        color: 'black'
-                    },
-                    width: '100%',
-                    height: '100%'
-                };
-
-                var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-                chart.draw(data, options);
+        aboutButton.addEventListener("click", function () {
+            // Toggle visibility of about content
+            if (aboutContent.style.display === "none") {
+                aboutContent.style.display = "block";
+            } else {
+                aboutContent.style.display = "none";
             }
         });
-
     </script>
 </body>
+
 </html>
