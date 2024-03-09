@@ -21,25 +21,24 @@
 </head>
 
 <body>
-    <div id="aboutTab">
-        <button id="aboutButton">About</button>
-    </div>
-
-    <div id="aboutContent">
-        <h2>About</h2>
-        <p>This data will show the past five years and the total amount of rain in the city. We will be visualizing this research through a smart dashboard that offers as much information to the viewers as possible without being too overwhelming and distracting. It will work to offer information quickly and efficiently while also showing how useful this information can be because of the way the data is used and visualized. This project will cover different elements of the rainfall and GIS experience which can be toggled with and maneuvered through the smart dashboard to give the most information at each level the user is seeking. It will cover a great deal of statistics and related information and topics to Seattle and its famous rainy weather much like the image examples below. This project will integrate differing levels of map-making and geographical visualizations learned and adapted from the beginning weeks of class and more specifically the final weeks depending on the prompts.</p>
-    </div>
 
     <!-- sidebar -->
     <div id="info">
         <div id="title">
+            
             <span id="reset"><a href="#">reset</a></span>
         </div>
         <div id="count" class="card">
-            <h5 id="desc"> Choose a layer </h5>
+            <h5 id="desc"> Please choose a layer </h5>
+            
         </div>
         <div id="legend-container"></div>
         <div id="chart_div"></div>
+
+    </div>
+    <div id="projectInfo">
+        <h2>Project Information</h2>
+        <p>This data will show the past five years and the total amount of rain in the city. We will be visualizing this research through a smart dashboard that offers as much information to the viewers as possible without being too overwhelming and distracting. It will work to offer information quickly and efficiently while also showing how useful this information can be because of the way the data is used and visualized. This project will cover different elements of the rainfall and GIS experience which can be toggled with and maneuvered through the smart dashboard to give the most information at each level the user is seeking. It will cover a great deal of statistics and related information and topics to Seattle and its famous rainy weather much like the image examples below. This project will integrate differing levels of map-making and geographical visualizations learned and adapted from the beginning weeks of class and more specifically the final weeks depending on the prompts.</p>
     </div>
 
     <div id="mainTitle"> Seattle Precipitation and Flood Data </div>
@@ -47,22 +46,6 @@
 
     <script src="js/main.js"></script>
     <script src="js/chart_pie.js"></script>
-
-    <script>
-        // JavaScript code to handle interaction with the "About" tab
-        const aboutButton = document.getElementById("aboutButton");
-        const aboutContent = document.getElementById("aboutContent");
-
-        aboutButton.addEventListener("click", function () {
-            // Toggle visibility of about content
-            if (aboutContent.style.display === "none") {
-                aboutContent.style.display = "block";
-            } else {
-                aboutContent.style.display = "none";
-            }
-        });
-    </script>
 </body>
 
 </html>
-

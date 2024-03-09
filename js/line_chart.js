@@ -23,12 +23,14 @@
    ]);
 
    var colors = [
-    '#3373C4',  // Light Blue
-    '#1750AC',
-    '#003396',
-    '#73B9EE',
-    '#86CEFA',  // Royal Blue
-    '#5494DA'
+    '#ADD8E6',  // Light Blue
+    '#87CEEB',
+    '#6495ED',
+    '#4682B4',
+    '#4169E1',  // Royal Blue
+    '#0000FF',  
+    '#0000CD',
+    '#00008B',
 ];
 
    // Set chart options

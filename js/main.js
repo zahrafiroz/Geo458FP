@@ -98,7 +98,7 @@ async function geojsonFetch() {
             // Define legend items with appropriate categories and colors
             const legendItems = {
                 'Population': '#FFA756',
-                'High Risk Areas': '#EE4B2B',
+                'High Risk': '#EE4B2B',
                 'Floodways': '#5C4033'
             };
 
@@ -128,7 +128,7 @@ function toggleLayerVisibility(category) {
             map.setLayoutProperty('risk-line', 'visibility', 'visible');
             map.setLayoutProperty('flood-line', 'visibility', 'visible');
             break;
-        case 'High Risk Areas':
+        case 'High Risk':
             map.setLayoutProperty('population-circle', 'visibility', 'visible');
             map.setLayoutProperty('risk-line', 'visibility', 'visible');
             map.setLayoutProperty('flood-line', 'visibility', 'visible');
@@ -148,7 +148,7 @@ function toggleLayerVisibility(category) {
         case 'Population':
             toggleLayer('population-circle');
             break;
-        case 'High Risk Areas':
+        case 'High Risk':
             toggleLayer('risk-line');
             break;
         case 'Floodways':
@@ -175,10 +175,3 @@ reset.addEventListener('click', event => {
     location.reload();
 });
 
-document.addEventListener("click", function(event) {
-    const aboutContent = document.getElementById("aboutContent");
-    const aboutButton = document.getElementById("aboutButton");
-    if (event.target !== aboutContent && event.target !== aboutButton) {
-        aboutContent.style.display = "none";
-    }
-});
