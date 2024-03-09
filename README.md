@@ -14,6 +14,7 @@ This project will cover different elements of the rainfall and GIS experience wh
 
 ## One or two screenshots to illustrate the project's functions
 <img width="478" alt="Screenshot 2024-03-08 at 8 42 38 PM" src="https://github.com/zahrafiroz/Geo458FP/assets/114683477/2bee5aa1-64aa-4c16-a1aa-7ee884806129">
+
 This image is our pie chart that depicts the breakdown of annual rainfall within the timeframe of 5 years. 
 
 <img width="1052" alt="Screenshot 2024-03-08 at 8 46 02 PM" src="https://github.com/zahrafiroz/Geo458FP/assets/114683477/37ba2cbb-743c-4cb6-9976-0605e1f6ea96">
