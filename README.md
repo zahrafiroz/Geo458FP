@@ -16,14 +16,7 @@ This project will cover different elements of the rainfall and GIS experience wh
 <img width="478" alt="Screenshot 2024-03-08 at 8 42 38 PM" src="https://github.com/zahrafiroz/Geo458FP/assets/114683477/2bee5aa1-64aa-4c16-a1aa-7ee884806129">
 This image is our pie chart that depicts the breakdown of annual rainfall within the timeframe of 5 years. 
 
-[Uploading Screenshot_2024-03-08_at_10.48.53_AM.png.webloc…]()<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>URL</key>
-	<string>https://cdn.discordapp.com/attachments/1203109367755309096/1215733289793617920/Screenshot_2024-03-08_at_10.48.53_AM.png?ex=65fdd2db&amp;is=65eb5ddb&amp;hm=d52ef712f0b4f564a5a197d77e1b1c17494b8cf0ad7eabc9104e862393590fdb&amp;</string>
-</dict>
-</plist>
+<img width="1052" alt="Screenshot 2024-03-08 at 8 46 02 PM" src="https://github.com/zahrafiroz/Geo458FP/assets/114683477/37ba2cbb-743c-4cb6-9976-0605e1f6ea96">
 An overview of our smart dashboard that is able to be changed based on the users input and layer selection. We also use the hover tool which makes it so everyone is able to recieve the information that is vital to them and their needs. 
 
 
